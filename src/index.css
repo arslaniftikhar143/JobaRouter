@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+:root {
+  --primary: #bc4123;
+  --secondary: #2b3452;
+}
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: "Poppins";
+  background: var(--secondary);
+}
+* {
+  color: #fff;
+  margin: 0;
+  box-sizing: border-box;
+}
+p {
+  margin: 20px 0;
+}
+button {
+  border: 0;
+  padding: 8px;
+  border-radius: 4px;
+  color: white;
+  background: var(--primary);
+  cursor: pointer;
+}
+
+/* navbar */
+header nav {
+  display: flex;
+  gap: 16px;
+  justify-content: end;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+header nav h1 {
+  margin-right: auto;
+  border-bottom: 3px solid var(--primary);
+}
+header nav a {
+  text-decoration: none;
+  padding: 6px;
+  border-radius: 4px;
+}
+header nav a.active {
+  background: var(--primary);
+}
+
+/* page content */
+main {
+  max-width: 1200px;
+  margin: 40px auto;
+}
+
+/* help layout */
+.help__layout {
+  margin-bottom: 1em;
+  width: 100%;
+  text-align: center;
+}
+.help__layout a {
+  text-decoration: none;
+  font-size: 20px;
+  padding: 0.5em 1em;
+  margin-right: 8px;
+  border: 2px solid white;
+}
+.help__layout .active {
+  font-weight: bold;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+/* faq */
+.faq {
+  display: flex;
+  flex-direction: column;
+}
+.question {
+  background-color: #191f31;
+  margin: 1em 0;
+  padding: 1em;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+.question:hover {
+  transform: scale(1.01);
+  box-shadow: #ff330071 0px 6px 24px 0px, #ff33007a 0px 0px 0px 1px;
+}
+.question strong {
+  border-bottom: 2px solid var(--primary);
+}
+/* careers list */
+.careers {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.careers__wrapper {
+  width: 100%;
+  display: grid;
+  gap: 1em;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+}
+.careers a {
+  background-color: #191f31;
+  padding: 1.2em;
+  text-decoration: none;
+
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+.careers div {
+  color: gray;
+}
+.careers a:hover h4 {
+  color: var(--primary);
+  transition: all 0.3s ease-in-out;
+}
+.careers a:hover {
+  transform: scale(1.01);
+  box-shadow: #ff330071 0px 8px 24px;
+  box-shadow: #ff330071 0px 6px 24px 0px, #ff33007a 0px 0px 0px 1px;
+  transition: all 0.3s ease-in-out;
+}
+/* careers details */
+.career__details {
+  background-color: #191f31;
+  padding: 1em;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+.career__details:hover {
+  box-shadow: #ff330071 0px 6px 24px 0px, #ff33007a 0px 0px 0px 1px;
+}
+span {
+  font-weight: bold;
+  color: var(--primary);
+  margin-right: 0.5em;
+}
+/* breadcrumbs */
