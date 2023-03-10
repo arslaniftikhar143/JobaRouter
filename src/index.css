@@ -140,3 +140,18 @@ span {
   margin-right: 0.5em;
 }
 /* breadcrumbs */
+.breadcrumbs {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.breadcrumb {
+  margin-right: 0.5em;
+}
+.breadcrumb ::after {
+  content: ">";
+  margin-left: 0.5em;
+}
+.breadcrumb:last-child::after {
+  display: none;
+}
