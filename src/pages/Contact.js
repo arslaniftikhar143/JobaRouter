@@ -1,32 +1,30 @@
-import React from "react";
+import { Form } from "react-router-dom";
 
-function Contact() {
+export default function Contact() {
   return (
     <div className="contact">
-      <h2>Contact Us</h2>
-      <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui provident
-        consequuntur vel omnis quisquam rem harum, maxime expedita, ullam ut
-        dolore! Distinctio eos minima voluptatum totam id hic! Sapiente debitis
-        quia illum officia obcaecati provident nulla odio molestiae suscipit
-        quasi.
-      </p>
-      <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui provident
-        consequuntur vel omnis quisquam rem harum, maxime expedita, ullam ut
-        dolore! Distinctio eos minima voluptatum totam id hic! Sapiente debitis
-        quia illum officia obcaecati provident nulla odio molestiae suscipit
-        quasi.
-      </p>
-      <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui provident
-        consequuntur vel omnis quisquam rem harum, maxime expedita, ullam ut
-        dolore! Distinctio eos minima voluptatum totam id hic! Sapiente debitis
-        quia illum officia obcaecati provident nulla odio molestiae suscipit
-        quasi.
-      </p>
+      <h3>Contact Us</h3>
+      <Form method="post" action="/help/contact">
+        <label>
+          <span>Your email:</span>
+          <input type="email" name="email" required />
+        </label>
+        <label>
+          <span>Your message:</span>
+          <textarea name="message" required></textarea>
+        </label>
+        <button>Submit</button>
+      </Form>
     </div>
   );
 }
 
-export default Contact;
+export async function ContactAction({ request }) {
+  const data = await request.formData();
+  const submission = {
+    email: data.get("email"),
+    message: data.get("message"),
+  };
+  console.log(submission);
+  return "Done!";
+}
